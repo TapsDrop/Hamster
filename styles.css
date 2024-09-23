@@ -52,7 +52,6 @@
     --box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* General body styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
@@ -81,7 +80,6 @@ h1 {
     color: var(--heading-color);
 }
 
-/* Grid container with responsiveness */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -128,6 +126,20 @@ h1 {
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
     color: var(--selected-text-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: var(--progress-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 20px;
+    background-color: var(--progress-fill);
+    transition: width 0.3s;
 }
 
 .form-group {
