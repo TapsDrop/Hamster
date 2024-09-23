@@ -52,6 +52,7 @@
     --box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
+/* General body styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
@@ -80,6 +81,7 @@ h1 {
     color: var(--heading-color);
 }
 
+/* Grid container with responsiveness */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -128,20 +130,6 @@ h1 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.progress-bar {
-    width: 100%;
-    background-color: var(--progress-bg);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#progressBar {
-    width: 0%;
-    height: 20px;
-    background-color: var(--progress-fill);
-    transition: width 0.3s;
-}
-
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -152,6 +140,38 @@ label {
     margin-bottom: 8px;
     font-weight: 500;
     color: var(--label-color);
+}
+
+.key-slider {
+    display: flex;
+    justify-content: center; /* Center the slider */
+    align-items: center;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 300px; /* Increased width */
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px; /* Increased size of thumb */
+    height: 24px;
+    background: #4caf50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 24px; /* Increased size of thumb */
+    height: 24px;
+    background: #4caf50;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 button {
