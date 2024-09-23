@@ -52,7 +52,6 @@
     --box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* General body styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
@@ -81,7 +80,6 @@ h1 {
     color: var(--heading-color);
 }
 
-/* Grid container with responsiveness */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -144,13 +142,13 @@ label {
 
 .key-slider {
     display: flex;
-    justify-content: center; /* Center the slider */
+    justify-content: center;
     align-items: center;
 }
 
 input[type="range"] {
     -webkit-appearance: none;
-    width: 300px; /* Increased width */
+    width: 300px;
     height: 10px;
     background: #ddd;
     border-radius: 5px;
@@ -159,7 +157,7 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 24px; /* Increased size of thumb */
+    width: 24px;
     height: 24px;
     background: #4caf50;
     border-radius: 50%;
@@ -167,7 +165,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 24px; /* Increased size of thumb */
+    width: 24px;
     height: 24px;
     background: #4caf50;
     border-radius: 50%;
@@ -177,17 +175,18 @@ input[type="range"]::-moz-range-thumb {
 button {
     background-color: var(--button-bg);
     color: var(--button-color);
-    border: none;
+    border: 2px solid red;
     padding: 12px 20px;
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
     margin-top: 20px;
 }
 
 button:hover {
     background-color: var(--button-hover);
+    border-color: darkred;
 }
 
 .footer {
