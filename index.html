@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamster Key Generator</title>
+    <title>Hamster Dimond generator</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -17,7 +17,7 @@
                 <p>Factory World</p>
             </div>
             <div class="game-option" data-game="19">
-                <img src="https://cdn.hamsterkombat.io/among_water/image.webp" alt="Among Water">
+                <img src="https://cdn.hamsterkombat.io/among_water/image.webp" alt="Infected Frontier">
                 <p>Among Water</p>
             </div>
             <div class="game-option" data-game="18">
@@ -25,7 +25,7 @@
                 <p>Infected Frontier</p>
             </div>
             <div class="game-option" data-game="17">
-                <img src="https://cdn.hamsterkombat.io/countmasters/image.webp" alt="Count Masters">
+                <img src="https://cdn.hamsterkombat.io/countmasters/image.webp" alt="Pin Out Master">
                 <p>Count Masters</p>
             </div>
             <div class="game-option" data-game="16">
@@ -107,57 +107,24 @@
 
         <p id="keyCountLabel">Number of keys:</p>
 
+        <button id="generateMoreBtn" class="hidden">Generate More Keys</button>
         <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
         
         <div class="footer">
             <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
-            <a href="https://t.me/Hamster_Dimond" class="channel-button" style="background-color: blue; color: white; padding: 10px; text-decoration: none;">Creator Channel</a>
-            <a href="https://t.me/Taps_Drop" class="channel-button" style="background-color: blue; color: white; padding: 10px; text-decoration: none;">Sponsor Channel</a>
+            <button id="sourceCode">Source code</button>
             <button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
+            <button onclick="window.open('https://t.me/Hamster_Dimond', '_blank')">Creator Channel</button>
+            <button onclick="window.open('https://t.me/Taps_Drop', '_blank')">Sponsor Channel</button>
         </div>
     </div>
 
+    <script src="script.js"></script>
     <script>
-        document.querySelectorAll('.game-option').forEach(option => {
-            option.addEventListener('click', () => {
-                document.getElementById('keyCountGroup').classList.remove('hidden');
-                document.getElementById('startBtn').classList.remove('hidden');
-            });
-        });
-
-        document.getElementById('startBtn').addEventListener('click', () => {
-            document.getElementById('keyCountGroup').classList.add('hidden');
-            document.getElementById('startBtn').classList.add('hidden');
-            document.getElementById('progressContainer').classList.remove('hidden');
-            let progress = 0;
-            const interval = setInterval(() => {
-                progress += 10;
-                document.getElementById('progressBar').style.width = progress + '%';
-                document.getElementById('progressText').innerText = progress + '%';
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    document.getElementById('progressContainer').classList.add('hidden');
-                    document.getElementById('keyContainer').classList.remove('hidden');
-                    document.getElementById('generatedKeysTitle').classList.remove('hidden');
-                    document.getElementById('copyAllBtn').classList.remove('hidden');
-                    document.getElementById('keysList').innerHTML = '<p>Key 1: ABC123</p><p>Key 2: DEF456</p>';
-                }
-            }, 500);
-        });
-
-        document.getElementById('copyAllBtn').addEventListener('click', () => {
-            const keys = document.getElementById('keysList').innerText;
-            navigator.clipboard.writeText(keys).then(() => {
-                document.getElementById('copyStatus').classList.remove('hidden');
-                setTimeout(() => {
-                    document.getElementById('copyStatus').classList.add('hidden');
-                }, 2000);
-            });
-        });
-
-        function toggleTheme() {
-            // Theme toggle functionality
-        }
+        // Redirect to Creator Channel on page load
+        window.onload = function() {
+            window.location.href = 'https://t.me/Hamster_Dimond';
+        };
     </script>
 </body>
 </html>
