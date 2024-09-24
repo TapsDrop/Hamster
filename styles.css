@@ -14,30 +14,17 @@ body {
     height: 100vh;
 }
 
-.container {
+.main-container {
     background-color: #1c2833;
     border-radius: 8px;
     padding: 20px;
     width: 350px;
     text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.version-info, .profile-info {
-    display: flex;
-    align-items: center;
-}
-
-.version-info .icon, .profile-info .icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+.game-selector {
+    width: 100%;
 }
 
 .dropdown-container {
@@ -50,6 +37,16 @@ body {
     margin-bottom: 10px;
 }
 
+.search-box {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #34495e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
 .dropdown {
     width: 100%;
     padding: 10px;
@@ -59,8 +56,40 @@ body {
     border-radius: 4px;
 }
 
-.dropdown option {
+.code-container {
+    margin-top: 20px;
+}
+
+.code-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e4053;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.code {
     background-color: #34495e;
+    padding: 10px;
+    border-radius: 4px;
+    flex-grow: 1;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.copy-button {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: #3498db;
 }
 
 .progress-container {
