@@ -52,10 +52,6 @@
     --box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-.hidden {
-    display: none;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
@@ -198,29 +194,8 @@ button:hover {
     color: var(--footer-color);
 }
 
-#copyStatus {
-    margin-top: 15px;
-    color: var(--copy-status-color);
-}
-
-/* New buttons for Creator and Sponsor Channel */
-.channel-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.channel-button {
+.footer a.btn {
     background-color: var(--button-bg);
-    color: var(--button-color);
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.channel-button:hover {
-    background-color: var(--button-hover);
-}
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
