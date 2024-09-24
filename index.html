@@ -3,62 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Selector</title>
+    <title>Game Key Generator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
-        <div class="game-selector">
-            <div class="dropdown-container">
-                <label for="games" class="dropdown-label" id="gameLabel">Zoopolis</label>
-                <input type="text" id="search" class="search-box" placeholder="Search game...">
-                <select id="games" class="dropdown" onchange="updateGameName()">
-                    <option value="Chain Cube 2048">Chain Cube 2048</option>
-                    <option value="Train Miner">Train Miner</option>
-                    <option value="Merge Away">Merge Away</option>
-                    <option value="Twerk Race 3D">Twerk Race 3D</option>
-                    <option value="Polysphere">Polysphere</option>
-                    <option value="Mow and Trim">Mow and Trim</option>
-                    <option value="Zoopolis" selected>Zoopolis</option>
-                    <option value="Fluff Crusade">Fluff Crusade</option>
-                    <option value="Tile Trio">Tile Trio</option>
-                </select>
-            </div>
-
-            <div class="code-container">
-                <div class="code-block">
-                    <div class="code">Code 1</div>
-                    <button class="copy-button">Copy</button>
-                </div>
-                <div class="code-block">
-                    <div class="code">Code 2</div>
-                    <button class="copy-button">Copy</button>
-                </div>
-                <div class="code-block">
-                    <div class="code">Code 3</div>
-                    <button class="copy-button">Copy</button>
-                </div>
-                <div class="code-block">
-                    <div class="code">Code 4</div>
-                    <button class="copy-button">Copy</button>
-                </div>
-            </div>
-
-            <div class="progress-container">
-                <span>Click Generate to use</span>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 2%;"></div>
-                </div>
-                <button class="generate-button">Generate</button>
+    <div class="container">
+        <h2 id="game-title">Zoopolis</h2>
+        <div class="dropdown">
+            <input type="text" class="search-box" id="search-game" placeholder="Search game...">
+            <div class="dropdown-content" id="game-list">
+                <a href="#" data-game="Chain Cube 2048">Chain Cube 2048</a>
+                <a href="#" data-game="Train Miner">Train Miner</a>
+                <a href="#" data-game="Merge Away">Merge Away</a>
+                <a href="#" data-game="Twerk Race 3D">Twerk Race 3D</a>
+                <a href="#" data-game="Polysphere">Polysphere</a>
+                <a href="#" data-game="Mow and Trim">Mow and Trim</a>
+                <a href="#" data-game="Zoopolis">Zoopolis</a>
+                <a href="#" data-game="Fluff Crusade">Fluff Crusade</a>
+                <a href="#" data-game="Tile Trio">Tile Trio</a>
+                <a href="#" data-game="Riding Extreme 3D">Riding Extreme 3D</a>
+                <a href="#" data-game="My Clone Army">My Clone Army</a>
+                <a href="#" data-game="Train Miner">Train Miner</a>
+                <a href="#" data-game="Twerk Race 3D">Twerk Race 3D</a>
+                <a href="#" data-game="Mud Racing">Mud Racing</a>
+                <a href="#" data-game="Bouncemasters">Bouncemasters</a>
+                <a href="#" data-game="Count Masters">Count Masters</a>
+                <a href="#" data-game="Infected Frontier">Infected Frontier</a>
+                <a href="#" data-game="Among Water">Among Water</a>
+                <a href="#" data-game="Factory World">Factory World</a>
             </div>
         </div>
+
+        <div class="code-box">
+            <span class="selected-game" id="selected-game">Zoopolis</span>
+            <input type="text" class="code" value="Code 1" readonly>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <i class="material-icons">content_copy</i>
+            </button>
+        </div>
+        <div class="code-box">
+            <span class="selected-game" id="selected-game">Zoopolis</span>
+            <input type="text" class="code" value="Code 2" readonly>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <i class="material-icons">content_copy</i>
+            </button>
+        </div>
+        <div class="code-box">
+            <span class="selected-game" id="selected-game">Zoopolis</span>
+            <input type="text" class="code" value="Code 3" readonly>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <i class="material-icons">content_copy</i>
+            </button>
+        </div>
+        <div class="code-box">
+            <span class="selected-game" id="selected-game">Zoopolis</span>
+            <input type="text" class="code" value="Code 4" readonly>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <i class="material-icons">content_copy</i>
+            </button>
+        </div>
+
+        <button class="generator-btn">Generator</button>
     </div>
 
     <script>
-        function updateGameName() {
-            var select = document.getElementById("games");
-            var label = document.getElementById("gameLabel");
-            label.innerText = select.value;
+        document.querySelectorAll('#game-list a').forEach(function (element) {
+            element.addEventListener('click', function () {
+                const gameName = this.getAttribute('data-game');
+                document.getElementById('game-title').textContent = gameName;
+                document.querySelectorAll('.selected-game').forEach(function (gameLabel) {
+                    gameLabel.textContent = gameName;
+                });
+
+                document.getElementById('game-list').style.display = 'none';
+            });
+        });
+
+        document.getElementById('search-game').addEventListener('focus', function() {
+            document.getElementById('game-list').style.display = 'block';
+        });
+
+        document.getElementById('search-game').addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const gameList = document.querySelectorAll('#game-list a');
+            gameList.forEach(function(game) {
+                const gameName = game.getAttribute('data-game').toLowerCase();
+                if (gameName.includes(filter)) {
+                    game.style.display = '';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        });
+
+        function copyCode(button) {
+            const code = button.previousElementSibling;
+            code.select();
+            document.execCommand("copy");
         }
     </script>
 </body>
