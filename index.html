@@ -82,6 +82,7 @@
             </div>
         </div>
 
+        <!-- Key Count Selection -->
         <div class="form-group hidden" id="keyCountGroup">
             <label for="keyCountSelect">Select Number of Keys:</label>
             <div id="keyCountSelect" class="key-slider">
@@ -91,6 +92,7 @@
         </div>
         <button id="startBtn" class="hidden">Generate Keys</button>
 
+        <!-- Progress Bar -->
         <div id="progressContainer" class="hidden">
             <div class="progress-bar">
                 <div id="progressBar"></div>
@@ -99,31 +101,68 @@
             <p id="progressLog">Starting...</p>
         </div>
 
+        <!-- Generated Keys Display -->
         <div id="keyContainer" class="hidden">
             <h2 id="generatedKeysTitle" class="hidden">Generated Keys</h2>
             <div id="keysList"></div>
             <button id="copyAllBtn" class="hidden">Copy All Keys</button>
         </div>
 
+        <!-- Copy Status -->
         <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
         
         <div class="footer">
             <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
-            
             <button id="creatorChannelBtn" class="btn-blue" onclick="window.location.href='https://t.me/Hamster_Dimond'">Creator Channel</button>
             <button id="sponsorChannelBtn" class="btn-blue" onclick="window.location.href='https://t.me/Taps_Drop'">Sponsor Channel</button>
-            
             <button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
         </div>
     </div>
 
     <script>
+        // Show Key Count and Start Button when game is selected
         document.querySelectorAll('.game-option').forEach(option => {
             option.addEventListener('click', () => {
                 document.getElementById('keyCountGroup').classList.remove('hidden');
                 document.getElementById('startBtn').classList.remove('hidden');
             });
         });
+
+        // Generate Keys and Show Progress
+        document.getElementById('startBtn').addEventListener('click', () => {
+            document.getElementById('keyCountGroup').classList.add('hidden');
+            document.getElementById('startBtn').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                document.getElementById('progressBar').style.width = progress + '%';
+                document.getElementById('progressText').innerText = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('progressContainer').classList.add('hidden');
+                    document.getElementById('keyContainer').classList.remove('hidden');
+                    document.getElementById('generatedKeysTitle').classList.remove('hidden');
+                    document.getElementById('copyAllBtn').classList.remove('hidden');
+                    document.getElementById('keysList').innerHTML = '<p>Key 1: ABC123</p><p>Key 2: DEF456</p>';
+                }
+            }, 500);
+        });
+
+        // Copy keys to clipboard
+        document.getElementById('copyAllBtn').addEventListener('click', () => {
+            const keys = document.getElementById('keysList').innerText;
+            navigator.clipboard.writeText(keys).then(() => {
+                document.getElementById('copyStatus').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('copyStatus').classList.add('hidden');
+                }, 2000);
+            });
+        });
+
+        function toggleTheme() {
+            // Theme toggle functionality
+        }
     </script>
 </body>
 </html>
