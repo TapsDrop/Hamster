@@ -3,58 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to TapsDrop Generator</title>
+    <title>Hamster Key Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .key-slider {
+            display: inline-block;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 200px;
+            height: 10px;
+            background: var(--slider-bg);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--slider-thumb);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--slider-thumb);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .channel-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .channel-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: blue;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to TapsDrop Generator</h1>
-        
-        <div class="grid-container">
-            <div class="game-option" onclick="selectGame('game1')">
-                <img src="path/to/game1-image.jpg" alt="Game 1">
-                <p>Game 1</p>
+        <h1>Hamster Key Generator</h1>
+        <div id="gameSelectContainer" class="grid-container">
+            <div class="game-option" data-game="20">
+                <img src="https://cdn.hamsterkombat.io/factory_world/image.webp" alt="Factory World">
+                <p>Factory World</p>
             </div>
-            <div class="game-option" onclick="selectGame('game2')">
-                <img src="path/to/game2-image.jpg" alt="Game 2">
-                <p>Game 2</p>
-            </div>
-            <div class="game-option" onclick="selectGame('game3')">
-                <img src="path/to/game3-image.jpg" alt="Game 3">
-                <p>Game 3</p>
-            </div>
-            <div class="game-option" onclick="selectGame('game4')">
-                <img src="path/to/game4-image.jpg" alt="Game 4">
-                <p>Game 4</p>
-            </div>
-            <div class="game-option" onclick="selectGame('game5')">
-                <img src="path/to/game5-image.jpg" alt="Game 5">
-                <p>Game 5</p>
-            </div>
-            <div class="game-option" onclick="selectGame('game6')">
-                <img src="path/to/game6-image.jpg" alt="Game 6">
-                <p>Game 6</p>
-            </div>
-            <div class="game-option" onclick="selectGame('game7')">
-                <img src="path/to/game7-image.jpg" alt="Game 7">
-                <p>Game 7</p>
-            </div>
-            <div class="game-option" onclick="selectGame('game8')">
-                <img src="path/to/game8-image.jpg" alt="Game 8">
-                <p>Game 8</p>
+            <div class="game-option" data-game="19">
+                <img src="https://cdn.hamsterkombat.io/among_water/image.webp" alt="Infected Frontier">
+                <p>Among Water</p>
             </div>
         </div>
 
-        <div class="form-group" id="keyCountGroup">
+        <div class="form-group hidden" id="keyCountGroup">
             <label for="keyCountSelect">Select Number of Keys:</label>
-            <div class="key-slider">
-                <input type="range" min="1" max="10" value="1" id="keyRange">
+            <div id="keyCountSelect" class="key-slider">
+                <input type="range" min="1" max="4" value="1" id="keyRange">
                 <span id="keyValue">1</span>
             </div>
         </div>
 
-        <button id="startBtn">Generate Keys</button>
+        <button id="startBtn" class="hidden">Generate Keys</button>
 
         <div id="progressContainer" class="hidden">
             <div class="progress-bar">
@@ -71,13 +99,18 @@
         </div>
 
         <p id="keyCountLabel">Number of keys:</p>
-
         <button id="generateMoreBtn" class="hidden">Generate More Keys</button>
         <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
 
+        <div class="channel-buttons">
+            <a href="https://t.me/Hamster_Dimond" class="button">Creator Channel</a>
+            <a href="https://t.me/Taps_Drop" class="button">Sponsor Channel</a>
+        </div>
+
         <div class="footer">
-            <a href="https://t.me/Hamster_Dimond" target="_blank" class="btn">Creator Channel</a>
-            <a href="https://t.me/Taps_Drop" target="_blank" class="btn">Sponsor Channel</a>
+            <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
+            <button id="sourceCode">Source code</button>
+            <button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
         </div>
     </div>
 
