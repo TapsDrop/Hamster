@@ -82,7 +82,6 @@
             </div>
         </div>
 
-        <!-- Key Count Selection -->
         <div class="form-group hidden" id="keyCountGroup">
             <label for="keyCountSelect">Select Number of Keys:</label>
             <div id="keyCountSelect" class="key-slider">
@@ -92,7 +91,6 @@
         </div>
         <button id="startBtn" class="hidden">Generate Keys</button>
 
-        <!-- Progress Bar -->
         <div id="progressContainer" class="hidden">
             <div class="progress-bar">
                 <div id="progressBar"></div>
@@ -101,26 +99,25 @@
             <p id="progressLog">Starting...</p>
         </div>
 
-        <!-- Generated Keys Display -->
         <div id="keyContainer" class="hidden">
             <h2 id="generatedKeysTitle" class="hidden">Generated Keys</h2>
             <div id="keysList"></div>
             <button id="copyAllBtn" class="hidden">Copy All Keys</button>
         </div>
 
-        <!-- Copy Status -->
+        <p id="keyCountLabel">Number of keys:</p>
+
         <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
         
         <div class="footer">
             <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
-            <button id="creatorChannelBtn" class="btn-blue" onclick="window.location.href='https://t.me/Hamster_Dimond'">Creator Channel</button>
-            <button id="sponsorChannelBtn" class="btn-blue" onclick="window.location.href='https://t.me/Taps_Drop'">Sponsor Channel</button>
+            <a href="https://t.me/Hamster_Dimond" class="channel-button" style="background-color: blue; color: white; padding: 10px; text-decoration: none;">Creator Channel</a>
+            <a href="https://t.me/Taps_Drop" class="channel-button" style="background-color: blue; color: white; padding: 10px; text-decoration: none;">Sponsor Channel</a>
             <button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
         </div>
     </div>
 
     <script>
-        // Show Key Count and Start Button when game is selected
         document.querySelectorAll('.game-option').forEach(option => {
             option.addEventListener('click', () => {
                 document.getElementById('keyCountGroup').classList.remove('hidden');
@@ -128,7 +125,6 @@
             });
         });
 
-        // Generate Keys and Show Progress
         document.getElementById('startBtn').addEventListener('click', () => {
             document.getElementById('keyCountGroup').classList.add('hidden');
             document.getElementById('startBtn').classList.add('hidden');
@@ -149,7 +145,6 @@
             }, 500);
         });
 
-        // Copy keys to clipboard
         document.getElementById('copyAllBtn').addEventListener('click', () => {
             const keys = document.getElementById('keysList').innerText;
             navigator.clipboard.writeText(keys).then(() => {
