@@ -52,6 +52,10 @@
     --box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
@@ -175,18 +179,17 @@ input[type="range"]::-moz-range-thumb {
 button {
     background-color: var(--button-bg);
     color: var(--button-color);
-    border: 2px solid red;
+    border: none;
     padding: 12px 20px;
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s;
     margin-top: 20px;
 }
 
 button:hover {
     background-color: var(--button-hover);
-    border-color: darkred;
 }
 
 .footer {
@@ -200,6 +203,24 @@ button:hover {
     color: var(--copy-status-color);
 }
 
-.hidden {
-    display: none;
+/* New buttons for Creator and Sponsor Channel */
+.channel-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.channel-button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.channel-button:hover {
+    background-color: var(--button-hover);
 }
