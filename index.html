@@ -3,38 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamster Key Generator</title>
+    <title>Welcome to TapsDrop Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Hamster Key Generator</h1>
-
-        <div id="gameSelectContainer" class="grid-container">
-            <div class="game-option">
+        <h1>Welcome to TapsDrop Generator</h1>
+        
+        <div class="grid-container">
+            <div class="game-option" onclick="selectGame('game1')">
                 <img src="path/to/game1-image.jpg" alt="Game 1">
                 <p>Game 1</p>
             </div>
-            <div class="game-option">
+            <div class="game-option" onclick="selectGame('game2')">
                 <img src="path/to/game2-image.jpg" alt="Game 2">
                 <p>Game 2</p>
             </div>
-            <div class="game-option">
+            <div class="game-option" onclick="selectGame('game3')">
                 <img src="path/to/game3-image.jpg" alt="Game 3">
                 <p>Game 3</p>
             </div>
-            <div class="game-option">
+            <div class="game-option" onclick="selectGame('game4')">
                 <img src="path/to/game4-image.jpg" alt="Game 4">
                 <p>Game 4</p>
+            </div>
+            <div class="game-option" onclick="selectGame('game5')">
+                <img src="path/to/game5-image.jpg" alt="Game 5">
+                <p>Game 5</p>
+            </div>
+            <div class="game-option" onclick="selectGame('game6')">
+                <img src="path/to/game6-image.jpg" alt="Game 6">
+                <p>Game 6</p>
+            </div>
+            <div class="game-option" onclick="selectGame('game7')">
+                <img src="path/to/game7-image.jpg" alt="Game 7">
+                <p>Game 7</p>
+            </div>
+            <div class="game-option" onclick="selectGame('game8')">
+                <img src="path/to/game8-image.jpg" alt="Game 8">
+                <p>Game 8</p>
             </div>
         </div>
 
         <div class="form-group" id="keyCountGroup">
             <label for="keyCountSelect">Select Number of Keys:</label>
-            <div id="keyCountSelect" class="key-slider">
-                <input type="range" min="1" max="4" value="1" id="keyRange">
+            <div class="key-slider">
+                <input type="range" min="1" max="10" value="1" id="keyRange">
                 <span id="keyValue">1</span>
             </div>
         </div>
@@ -63,7 +78,6 @@
         <div class="footer">
             <a href="https://t.me/Hamster_Dimond" target="_blank" class="btn">Creator Channel</a>
             <a href="https://t.me/Taps_Drop" target="_blank" class="btn">Sponsor Channel</a>
-            <button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
         </div>
     </div>
 
