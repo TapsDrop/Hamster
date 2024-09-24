@@ -3,45 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown Menu</title>
+    <title>Game Selector</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="version-info">
-                <img src="telegram-icon.png" alt="Telegram Icon" class="icon">
-                <span>version: 0.7.21</span>
+    <div class="main-container">
+        <div class="game-selector">
+            <div class="dropdown-container">
+                <label for="games" class="dropdown-label" id="gameLabel">Zoopolis</label>
+                <input type="text" id="search" class="search-box" placeholder="Search game...">
+                <select id="games" class="dropdown" onchange="updateGameName()">
+                    <option value="Chain Cube 2048">Chain Cube 2048</option>
+                    <option value="Train Miner">Train Miner</option>
+                    <option value="Merge Away">Merge Away</option>
+                    <option value="Twerk Race 3D">Twerk Race 3D</option>
+                    <option value="Polysphere">Polysphere</option>
+                    <option value="Mow and Trim">Mow and Trim</option>
+                    <option value="Zoopolis" selected>Zoopolis</option>
+                    <option value="Fluff Crusade">Fluff Crusade</option>
+                    <option value="Tile Trio">Tile Trio</option>
+                </select>
             </div>
-            <div class="profile-info">
-                <img src="profile-icon.png" alt="Profile Icon" class="icon">
-                <span>Halikova Sitora</span>
-                <span>@TapsDroper</span>
-            </div>
-        </div>
 
-        <div class="dropdown-container">
-            <label for="games" class="dropdown-label">Zoopolis</label>
-            <select id="games" class="dropdown">
-                <option value="chaincube">Chain Cube 2048</option>
-                <option value="trainminer">Train Miner</option>
-                <option value="mergeaway">Merge Away</option>
-                <option value="twerkrace">Twerk Race 3D</option>
-                <option value="polysphere">Polysphere</option>
-                <option value="mowtrim">Mow and Trim</option>
-                <option value="zoopolis">Zoopolis</option>
-                <option value="fluffcrusade">Fluff Crusade</option>
-                <option value="tiletrio">Tile Trio</option>
-            </select>
-        </div>
-
-        <div class="progress-container">
-            <span>Click Generate to use</span>
-            <div class="progress-bar">
-                <div class="progress" style="width: 2%;"></div>
+            <div class="code-container">
+                <div class="code-block">
+                    <div class="code">Code 1</div>
+                    <button class="copy-button">Copy</button>
+                </div>
+                <div class="code-block">
+                    <div class="code">Code 2</div>
+                    <button class="copy-button">Copy</button>
+                </div>
+                <div class="code-block">
+                    <div class="code">Code 3</div>
+                    <button class="copy-button">Copy</button>
+                </div>
+                <div class="code-block">
+                    <div class="code">Code 4</div>
+                    <button class="copy-button">Copy</button>
+                </div>
             </div>
-            <button class="generate-button">Generate</button>
+
+            <div class="progress-container">
+                <span>Click Generate to use</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 2%;"></div>
+                </div>
+                <button class="generate-button">Generate</button>
+            </div>
         </div>
     </div>
+
+    <script>
+        function updateGameName() {
+            var select = document.getElementById("games");
+            var label = document.getElementById("gameLabel");
+            label.innerText = select.value;
+        }
+    </script>
 </body>
 </html>
