@@ -7,58 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .form-group {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .key-slider {
-            display: inline-block;
-        }
-
-        input[type="range"] {
-            -webkit-appearance: none;
-            width: 200px;
-            height: 10px;
-            background: var(--slider-bg);
-            border-radius: 5px;
-            outline: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            background: var(--slider-thumb);
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            background: var(--slider-thumb);
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .channel-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .channel-buttons a {
-            text-decoration: none;
-            color: white;
-            background-color: blue;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -141,7 +89,6 @@
                 <span id="keyValue">1</span>
             </div>
         </div>
-
         <button id="startBtn" class="hidden">Generate Keys</button>
 
         <div id="progressContainer" class="hidden">
@@ -158,18 +105,21 @@
             <button id="copyAllBtn" class="hidden">Copy All Keys</button>
         </div>
 
-        <div class="channel-buttons">
-            <a href="https://t.me/Hamster_Dimond" class="button">Creator Channel</a>
-            <a href="https://t.me/Taps_Drop" class="button">Sponsor Channel</a>
-        </div>
+        <p id="keyCountLabel">Number of keys:</p>
 
+        <button id="generateMoreBtn" class="hidden">Generate More Keys</button>
+        <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
+        
         <div class="footer">
             <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
-            <button id="sourceCode">Source code</button>
+            
+            <button id="creatorChannelBtn" class="btn-blue" onclick="window.location.href='https://t.me/Hamster_Dimond'">Creator Channel</button>
+            <button id="sponsorChannelBtn" class="btn-blue" onclick="window.location.href='https://t.me/Taps_Drop'">Sponsor Channel</button>
+            
             <button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+                                                 </html>
