@@ -56,4 +56,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // Select game function
     function selectGame(game) {
         gameTitle.innerText = game;
-        codeInput
+        codeInput.value = ''; // Clear previous code
+        progressBar.style.display = 'none'; // Hide progress bar
+        progressText.style.display = 'none'; // Hide progress text
+        generateBtn.disabled = false; // Enable generate button
+    }
+
+    // Generate code function
+    generateBtn.addEventListener('click', () => {
+        const selectedGame = gameTitle.innerText;
+        if (selectedGame in games) {
+            const appToken = games[selectedGame].appToken;
+            const promoId = games[selectedGame].promoId;
+
+            // Reset progress
+            progressBar.value = 0;
+            progressBar.style.display = 'block'; // Show progress bar
+            progressText.style.display = 'block'; // Show progress text
+            progressText.innerText = 'Generating... 0%';
+
+            let progress = 0;
+
+            // Simulate generating code with an interval
+            const interval = setInterval(() => {
+                progress += 10; // Increase progress
+                if (progress <= 100) {
+                    progressBar.value = progress;
+                    progressText.innerText = `Generating... ${progress}%`;
+                }
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    const generatedCode = `AppToken: ${appToken}, PromoId: ${promoId}`;
+                    codeInput.value = generatedCode; // Set generated code
+                    progressText.innerText = 'Generation complete!'; // Update text
+                    generateBtn.disabled = false; // Enable generate button
+                }
+            }, 1000); // Change this to adjust generation speed (currently 10 seconds)
+        }
+    });
+});
