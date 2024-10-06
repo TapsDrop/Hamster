@@ -3,95 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Key Generator</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Генератор Ключей Hamster Kombat</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h2 id="game-title">Zoopolis</h2>
-        <div class="dropdown">
-            <input type="text" class="search-box" id="search-game" placeholder="Search game...">
-            <div class="dropdown-content" id="game-list">
-                <a href="#" data-game="Chain Cube 2048">Chain Cube 2048</a>
-                <a href="#" data-game="Train Miner">Train Miner</a>
-                <a href="#" data-game="Merge Away">Merge Away</a>
-                <a href="#" data-game="Twerk Race 3D">Twerk Race 3D</a>
-                <a href="#" data-game="Polysphere">Polysphere</a>
-                <a href="#" data-game="Mow and Trim">Mow and Trim</a>
-                <a href="#" data-game="Zoopolis">Zoopolis</a>
-                <a href="#" data-game="Fluff Crusade">Fluff Crusade</a>
-                <a href="#" data-game="Tile Trio">Tile Trio</a>
+    <main class="main-container">
+        <section class="language-selector">
+            <select id="languageSelect">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="sr">Српски</option>
+                <option value="be">Беларуская</option>
+                <option value="ar">العربية</option>
+                <option value="fa">فارسی</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Português</option>
+                <option value="zh">简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="hi">हिन्दी</option>
+                <option value="tr">Türkçe</option>
+                <option value="pl">Polski</option>
+            </select>
+        </section>
+        <section class="container">
+            <h1>Генератор Ключей Hamster Kombat</h1>
+            <label for="gameSelect" id="gameSelectLabel">Выберите игру для генерации ключа:</label>
+            <select id="gameSelect">
+                <option value="ChainCube2048">Chain Cube 2048</option>
+                <option value="TrainMiner">Train Miner</option>
+                <option value="MergeAway">Merge Away</option>
+                <option value="TwerkRace">Twerk Race</option>
+                <option value="Polysphere">Polysphere</option>
+                <option value="MowandTrim">Mow and Trim</option>
+                <option value="Zoopolis">Zoopolis</option>
+                <option value="TileTrio">Tile Trio</option>
+                <option value="FluffCrusade">Fluff Crusade</option>
+                <option value="StoneAge">Stone Age</option>
+                <option value="Bouncemasters">Bouncemasters</option>
+                <option value="HideBall">Hide Ball</option>
+                <option value="CountMasters">Count Masters</option>
+                <option value="PinOutMaster">Pin Out Master</option>
+                <option value="AmongWater">Among Water</option>
+                <option value="InfectedFrontier">Infected Frontier</option>
+                <option value="FactoryWorld">Factory World</option>
+            </select>
+            <label for="keyCountSelect" id="keyCountLabel">Выберите количество ключей для генерации:</label>
+            <select id="keyCountSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <button id="startBtn" class="button">Сгенерировать ключи</button>
+            <div id="progressContainer" class="progress-container hidden">
+                <div id="progressBar" class="progress-bar"></div>
+                <span id="progressText" class="progress-text">0%</span>
             </div>
-        </div>
-
-        <div class="code-box">
-            <span class="selected-game" id="selected-game">Zoopolis</span>
-            <input type="text" class="code" value="Code 1" readonly>
-            <button class="copy-btn" onclick="copyCode(this)">
-                <i class="material-icons">content_copy</i>
-            </button>
-        </div>
-        <div class="code-box">
-            <span class="selected-game" id="selected-game">Zoopolis</span>
-            <input type="text" class="code" value="Code 2" readonly>
-            <button class="copy-btn" onclick="copyCode(this)">
-                <i class="material-icons">content_copy</i>
-            </button>
-        </div>
-        <div class="code-box">
-            <span class="selected-game" id="selected-game">Zoopolis</span>
-            <input type="text" class="code" value="Code 3" readonly>
-            <button class="copy-btn" onclick="copyCode(this)">
-                <i class="material-icons">content_copy</i>
-            </button>
-        </div>
-        <div class="code-box">
-            <span class="selected-game" id="selected-game">Zoopolis</span>
-            <input type="text" class="code" value="Code 4" readonly>
-            <button class="copy-btn" onclick="copyCode(this)">
-                <i class="material-icons">content_copy</i>
-            </button>
-        </div>
-
-        <button class="generator-btn">Generator</button>
-    </div>
-
-    <script>
-        document.querySelectorAll('#game-list a').forEach(function (element) {
-            element.addEventListener('click', function () {
-                const gameName = this.getAttribute('data-game');
-                document.getElementById('game-title').textContent = gameName;
-                document.querySelectorAll('.selected-game').forEach(function (gameLabel) {
-                    gameLabel.textContent = gameName;
-                });
-
-                document.getElementById('game-list').style.display = 'none';
-            });
-        });
-
-        document.getElementById('search-game').addEventListener('focus', function() {
-            document.getElementById('game-list').style.display = 'block';
-        });
-
-        document.getElementById('search-game').addEventListener('input', function() {
-            const filter = this.value.toLowerCase();
-            const gameList = document.querySelectorAll('#game-list a');
-            gameList.forEach(function(game) {
-                const gameName = game.getAttribute('data-game').toLowerCase();
-                if (gameName.includes(filter)) {
-                    game.style.display = '';
-                } else {
-                    game.style.display = 'none';
-                }
-            });
-        });
-
-        function copyCode(button) {
-            const code = button.previousElementSibling;
-            code.select();
-            document.execCommand("copy");
-        }
-    </script>
+            <div id="keyContainer" class="key-container hidden">
+                <h2 id="generatedKeysTitle">Сгенерированные ключи:</h2>
+                <button id="copyAllBtn" class="button hidden">Скопировать все ключи</button>
+                <div id="keysList" class="keys-list"></div>
+            </div>
+        </section>
+        <button id="creatorChannelBtn" class="button footer-button">Powered by Project PDoSI</button>
+    </main>
 </body>
 </html>
