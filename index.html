@@ -291,7 +291,35 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            
+            <button onclick="generateKeys()">Generate Codes</button>
+        </div>
+
+        <div class="form-container">
+            <h2>Data Log</h2>
+            <pre id="jsonDataDisplay" class="key-display"></pre>
+            <div id="loadingBar">
+                <div id="loadingBarFill"></div>
+                <div id="loadingBarNumber"></div>
+            </div>
+            <br>
+            <div id="keyContainer">
+            <h2 class="gentext">Generated Codes</h2>
+            <!-- Generated keys will be placed here -->
+            </div>
+            <div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
+                <button id="copyButton" class="buttoon" onclick="copyAllKeys()">Copy All Codes</button>
+                <button id="deleteButton" class="buttoon" onclick="deleteKeys()">Delete Codes</button>
+            </div>
+            <div id="important" style="text-align: center; display: none; margin-top: 10px;">
+                <a href="https://t.me/Hamster_Dimond/1530" style="color: #FF0000; font-weight:500; text-decoration: none;">
+                    <span style="border-bottom: 1px dotted #FF0000;">How to enter codes !</span>
+                </a>
+            </div>
+            <br>
+            <button style="width: 97%; height: 60px; font-size: 20px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Join AirDrop Channel</button>
+            <div style="display: flex; justify-content: center; margin-top: 0px;">
+                <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Owner Channel</button>
+                <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond/1544?single'">How to use ?</button>
             </div>
         </div>
         
