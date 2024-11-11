@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #2E2E2E;
             padding: 20px;
         }
         .container {
@@ -17,8 +17,11 @@
             margin: 0 auto;
         }
         .form-container {
+            border: 2px solid #333;
+            border-radius: 10px;
+
             width: 48%;
-            background-color: #fff;
+            background-color: #000; color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -137,6 +140,9 @@
                 align-items: center;
             }
             .form-container {
+            border: 2px solid #333;
+            border-radius: 10px;
+
                 width: 95%;
                 margin-bottom: 20px;
             }
@@ -253,12 +259,39 @@
               width: 25px;
               height:auto;
           }
-    </style>
+    
+.generated-container {
+    background-color: #1a1a1a;  /* Dark background for generated codes section */
+    color: #ffffff;              /* White text for visibility */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;                   /* Space between each code block */
+    padding: 20px;               /* Padding around the container */
+    border-radius: 10px;         /* Rounded edges for aesthetic look */
+}
+
+.generated-container .code-block {
+    background-color: #333333;   /* Slightly lighter than container for contrast */
+    color: #ffffff;
+    padding: 10px 20px;          /* Padding inside each code block */
+    border-radius: 5px;          /* Rounded edges for each code block */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.generated-container .code-block .copy-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+</style>
 </head>
 <body>
     <div class="container">
         <div class="form-container">
-            <h2>Hamster Dimond ðŸ’Ž generator</h2>
+            <h2>Hamster Dimond 💎 generator</h2>
             <br>
             <label for="appSelect">Select application:</label>
             <select id="appSelect" onchange="updateConstants()">
@@ -316,7 +349,7 @@
                 </a>
             </div>
             <br>
-            <button style="width: 97%; height: 60px; font-size: 20px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Channel ðŸŒ</button>
+            <button style="width: 97%; height: 60px; font-size: 20px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Channel 🌐</button>
             <div style="display: flex; justify-content: center; margin-top: 0px;">
                 <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Owner Channel</button>
                 <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond/1544?single'">Sponsor Channel</button>
