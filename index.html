@@ -5,45 +5,61 @@
         color: #000; /* متن مشکی */
     }
     body.dark-mode {
-        background-color: #1a1a1a; /* تم شب */
-        color: #fff; /* متن سفید */
+        background-color: #FFFFFF; /* تم شب */
+        color: #000000; /* متن سفید */
     }
     input, textarea, select {
-        background-color: #000;
+        background-color: #FFFFFF;
         color: #000;
     }
     body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
-        background-color: #333;
-        color: #fff;
+        background-color: #000000;
+        color: #000000;
     }
     .form-container h2 {
         color: inherit;
     }
-</style>
+
+.container { display: block; width: 100%; }
+    .form-container:first-child {
+        border: 2px solid black; /* Add black border only around the first box */
+    }
+    .container {
+        margin-left: 0; /* Align container to the left to fit mobile screens */
+    }
+    
+    .form-container:last-child {
+        margin: 0 auto; /* Center align the second box */
+        width: 85%; /* Set width to ensure centering */
+    }
+    </style>
+    
+    
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamster Code Generator</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hamster Code Generator</title>
+<style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2E2E2E;
+            background-color: #FFFFFF;
             padding: 20px;
         }
         .container {
             display: flex;
             justify-content: space-between;
             max-width: 1000px;
-            margin: 0 auto;
+            margin-left: 5%; margin-right: 5%;
         }
-        .form-container { background-color: #000; color: #fff;
-            border: 2px solid #333;
+        .form-container { background-color: #FFFFFF; color: #000000;
+            border: none;
             border-radius: 10px;
 
             width: 48%;
-            background-color: #000; color: #fff;
+            background-color: #FFFFFF; color: #000000;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -88,7 +104,7 @@
             width: calc(100% - 22px);
             padding: 10px;
             background-color: #007bff;
-            color: #fff;
+            color: #000000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -99,7 +115,7 @@
             width: calc(50% - 20px);
             padding: 13px 13px;
             background-color: #007bff;
-            color: #fff;
+            color: #000000;
             box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
             font-size:18px;
             font-weight: 500;
@@ -131,8 +147,8 @@
         }
         #jsonDataDisplay {
             white-space: pre;
-            background-color: #000; /* Set background to black */
-            color: #fff; /* Set text color to white */
+            background-color: #FFFFFF; /* Set background to black */
+            color: #000000; /* Set text color to white */
             padding: 10px;
             border: 1px solid #333;
             border-radius: 5px;
@@ -162,15 +178,15 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .form-container { background-color: #000; color: #fff;
-            border: 2px solid #333;
+            .form-container { background-color: #FFFFFF; color: #000000;
+            border: none;
             border-radius: 10px;
 
-                width: 95%;
+                width: 90%;
                 margin-bottom: 20px;
             }
             #jsonDataDisplay {
-                width: 95%;
+                width: 90%;
                 margin: 10 auto;
             }
         }
@@ -189,7 +205,7 @@
         #jsonDataDisplay > div > div {
             padding: 5px 10px;
             background-color: #007bff;
-            color: #fff;
+            color: #000000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -203,7 +219,7 @@
         /* Loading bar styling */
         #loadingBar {
             display: none;
-            width: 101%; 
+            width: 90%; 
             height: 20px;
             background-color: #ddd; /* Light gray background */
             border-radius: 5px;
@@ -227,7 +243,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #333;
+            color: #000000;
             font-weight: bold;
         }
         .version {
@@ -235,7 +251,7 @@
             bottom: 3px;
             left: 6px;
             font-size: 12px;
-            color: #666;
+            color: #000000;
             z-index: 1;
         }
         .ad-container {
@@ -249,7 +265,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
             text-decoration: none;
-            color: #333;
+            color: #000000;
           }
 
         .ad-image {
@@ -275,7 +291,7 @@
         .ad-tag {
             margin: 0;
             font-size: 14px;
-            color: #666;
+            color: #000000;
           }
           .nav-images {
               margin-top:0px;
@@ -284,7 +300,7 @@
           }
     
 .generated-container {
-    background-color: #1a1a1a;  /* Dark background for generated codes section */
+    background-color: #FFFFFF;  /* Dark background for generated codes section */
     color: #000000;              /* White text for visibility */
     display: flex;
     flex-wrap: wrap;
@@ -294,7 +310,8 @@
 }
 
 .generated-container .code-block {
-    background-color: #333333;   /* Slightly lighter than container for contrast */
+    background-color: #FFFFFF; /* Set background to black for container behind Copy Code */
+    background-color: #000000333;   /* Slightly lighter than container for contrast */
     color: #000000;
     padding: 10px 20px;          /* Padding inside each code block */
     border-radius: 5px;          /* Rounded edges for each code block */
@@ -309,78 +326,93 @@
     font-size: 18px;
 }
 
+
+    .form-container:first-child {
+        border: 2px solid black; /* Add black border only around the first box */
+    }
+    .container {
+        margin-left: 0; /* Align container to the left to fit mobile screens */
+    }
+    
+    .form-container:last-child {
+        margin: 0 auto; /* Center align the second box */
+        width: 85%; /* Set width to ensure centering */
+    }
+    </style>
+    
+    
+
+<style>
+    .copy-button {
+        background: url('/mnt/data/file-EXtIUpAT51AFMn6cvCbt5bM3') no-repeat center center;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        border: none;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h2 style="color: inherit;">Hamster Dimond Generator</h2>
-            <br>
-            <label for="appSelect">Select application:</label>
-            <select id="appSelect" onchange="updateConstants()">
-                <option value="Cube" selected>Chain Cube 2048</option>
-                <option value="Train">Train Miner</option>
-                <option value="Merge">Merge Away</option>
-                <option value="Poly">Polysphere</option>
-                <option value="Zoo">Zoopolis</option>
-                <option value="Stone">Stone Age</option>
-                <option value="Bounc">Bouncemasters</option>
-                <option value="Hide">Hide Ball</option>
-                <option value="Count">Count Masters</option>
-                <option value="Infct">Infected Frontier</option>
-                <option value="Fctry">Factory World</option>
-                <option value="Snack">Snake Run</option>
-                <option value="Cook">Cooking Stories</option>
-                <option value="Tower">Tower Defence</option>
-                <option value="All">All Games Codes</option>
-            </select>
-            <label id="keyCountLabel" for="keyCount">Number of codes:</label>
-            <select id="keyCount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4" selected>4</option> <!-- Default to 4 -->
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-            <button onclick="generateKeys()">Generate Codes</button>
-        </div>
+<div class="container">
+<div class="form-container" style="background-color: #FFFFFF000; color: #FFFFFF; padding: 20px; width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<h2 style="color: #000000;">Hamster Dimond Generator</h2>
+<br/>
+<label for="appSelect" style="color: #000000;">Select application:</label>
+<select id="appSelect" onchange="updateConstants()">
+<option selected="" value="Cube">Chain Cube 2048</option>
+<option value="Train">Train Miner</option>
+<option value="Merge">Merge Away</option>
+<option value="Poly">Polysphere</option>
+<option value="Zoo">Zoopolis</option>
+<option value="Stone">Stone Age</option>
+<option value="Bounc">Bouncemasters</option>
+<option value="Hide">Hide Ball</option>
+<option value="Count">Count Masters</option>
+<option value="Infct">Infected Frontier</option>
+<option value="Fctry">Factory World</option>
+<option value="Snack">Snake Run</option>
+<option value="Cook">Cooking Stories</option>
+<option value="Tower">Tower Defence</option>
+<option value="All">All Games Codes</option>
+</select>
+<label for="keyCount" id="keyCountLabel" style="color: #000000;">Number of codes:</label>
+<select id="keyCount">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option selected="" value="4">4</option> <!-- Default to 4 -->
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+<button onclick="generateKeys()">Generate Codes</button>
 
-        <div class="form-container">
-            <h2 style="color: inherit;">Hamster Dimond</h2>
-            <pre id="jsonDataDisplay" class="key-display"></pre>
-            <div id="loadingBar">
-                <div id="loadingBarFill"></div>
-                <div id="loadingBarNumber"></div>
-            </div>
-            <br>
-            <div id="keyContainer">
-            <h2 class="gentext">Generated Codes</h2>
-            <!-- Generated keys will be placed here -->
-            </div>
-            <div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
-                
-                <button id="deleteButton" class="buttoon" onclick="deleteKeys()">Delete Codes</button>
-            </div>
-            <div id="important" style="display: none;">
-                <a href="https://t.me/Hamster_Dimond/1530" style="color: #FF0000; font-weight:500; text-decoration: none;">
-                    <span style="border-bottom: 1px dotted #FF0000;">How to enter codes !</span>
-                </a>
-            </div>
-            <br>
-            
-            <div style="display: flex; justify-content: center; margin-top: 0px;">
-                
-                
-            </div>
-        </div>
-        
+<div class="form-container">
+    <h2>Hamster Dimond</h2>
+    <pre class="key-display" id="jsonDataDisplay"></pre>
+    <div id="loadingBar">
+        <div id="loadingBarFill"></div>
+        <div id="loadingBarNumber"></div>
     </div>
-    <script>
+    <br/>
+    <div id="keyContainer">
+        <h2 class="gentext">Generated Codes</h2>
+    </div>
+    <div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
+        <button class="buttoon" id="deleteButton" onclick="deleteKeys()">Delete Codes</button>
+    </div>
+    
+    <br/>
+    <div style="display: flex; justify-content: center; margin-top: 0px;">
+    </div>
+</div>
+
+</div>
+<script>
         const appConfigs = {
             Poly: {
                 appToken: '2aaf5aee-2cbc-47ec-8a3f-0962cc14bc71',
@@ -669,7 +701,7 @@
                 keyText.style.width = 'calc(66% - 22px)'; // Adjust for copy button width
 
                 const copyButton = document.createElement('div');
-                copyButton.innerHTML = 'Copy Code';
+                copyButton.innerHTML = '📋';
                 copyButton.style.display = 'inline-flex';
                 copyButton.style.padding = '10px 10px';
                 copyButton.style.backgroundColor = '#007bff';
@@ -685,7 +717,7 @@
                             copyButton.textContent = 'Copied!';
                             copyButton.style.backgroundColor = "#128028";
                             setTimeout(() => {
-                                copyButton.innerHTML = 'Copy Code';
+                                copyButton.innerHTML = '📋';
                                 copyButton.style.backgroundColor = "#09A629";
                             }, 1500); // Change back after 1 second
                         })
@@ -875,9 +907,7 @@
         }
         document.addEventListener('DOMContentLoaded', displayStoredKeys)
     </script>
-    <div class="version">v0.0.1</div>
-
-<button id="themeToggleButton" style="position: fixed; bottom: 20px; right: 20px; padding: 10px; font-size: 14px; border-radius: 5px; cursor: pointer;">Theme🌞</button>
+<div class="version">v0.0.1</div>
 <script>
     const themeToggleButton = document.getElementById('themeToggleButton');
     themeToggleButton.addEventListener('click', () => {
@@ -896,6 +926,5 @@
         document.body.classList.add('light-mode');
     }
 </script>
-
 </body>
 </html>
