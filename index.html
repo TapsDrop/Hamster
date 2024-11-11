@@ -1,3 +1,25 @@
+
+<style>
+    body.light-mode {
+        background-color: #f0f0f0; /* رنگ مشابه تم ChatGPT */
+        color: #000; /* متن مشکی */
+    }
+    body.dark-mode {
+        background-color: #1a1a1a; /* تم شب */
+        color: #fff; /* متن سفید */
+    }
+    input, textarea, select {
+        background-color: #000;
+        color: #000;
+    }
+    body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
+        background-color: #333;
+        color: #fff;
+    }
+    .form-container h2 {
+        color: inherit;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +38,7 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        .form-container {
+        .form-container { background-color: #000; color: #fff;
             border: 2px solid #333;
             border-radius: 10px;
 
@@ -76,7 +98,7 @@
         .buttoon {
             width: calc(50% - 20px);
             padding: 13px 13px;
-            background-color: #09A629;
+            background-color: #007bff;
             color: #fff;
             box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
             font-size:18px;
@@ -109,9 +131,10 @@
         }
         #jsonDataDisplay {
             white-space: pre;
-            background-color: #f9f9f9;
+            background-color: #000; /* Set background to black */
+            color: #fff; /* Set text color to white */
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #333;
             border-radius: 5px;
             margin-top: 10px;
             font-family: monospace;
@@ -139,7 +162,7 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .form-container {
+            .form-container { background-color: #000; color: #fff;
             border: 2px solid #333;
             border-radius: 10px;
 
@@ -262,7 +285,7 @@
     
 .generated-container {
     background-color: #1a1a1a;  /* Dark background for generated codes section */
-    color: #ffffff;              /* White text for visibility */
+    color: #000000;              /* White text for visibility */
     display: flex;
     flex-wrap: wrap;
     gap: 10px;                   /* Space between each code block */
@@ -272,7 +295,7 @@
 
 .generated-container .code-block {
     background-color: #333333;   /* Slightly lighter than container for contrast */
-    color: #ffffff;
+    color: #000000;
     padding: 10px 20px;          /* Padding inside each code block */
     border-radius: 5px;          /* Rounded edges for each code block */
     display: flex;
@@ -291,7 +314,7 @@
 <body>
     <div class="container">
         <div class="form-container">
-            <h2>Hamster Dimond 💎 generator</h2>
+            <h2 style="color: inherit;">Hamster Dimond Generator</h2>
             <br>
             <label for="appSelect">Select application:</label>
             <select id="appSelect" onchange="updateConstants()">
@@ -328,7 +351,7 @@
         </div>
 
         <div class="form-container">
-            <h2>Data Log</h2>
+            <h2 style="color: inherit;">Hamster Dimond</h2>
             <pre id="jsonDataDisplay" class="key-display"></pre>
             <div id="loadingBar">
                 <div id="loadingBarFill"></div>
@@ -340,19 +363,19 @@
             <!-- Generated keys will be placed here -->
             </div>
             <div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
-                <button id="copyButton" class="buttoon" onclick="copyAllKeys()">Copy All Codes</button>
+                
                 <button id="deleteButton" class="buttoon" onclick="deleteKeys()">Delete Codes</button>
             </div>
-            <div id="important" style="text-align: center; display: none; margin-top: 10px;">
+            <div id="important" style="display: none;">
                 <a href="https://t.me/Hamster_Dimond/1530" style="color: #FF0000; font-weight:500; text-decoration: none;">
                     <span style="border-bottom: 1px dotted #FF0000;">How to enter codes !</span>
                 </a>
             </div>
             <br>
-            <button style="width: 97%; height: 60px; font-size: 20px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Channel 🌐</button>
+            
             <div style="display: flex; justify-content: center; margin-top: 0px;">
-                <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond'">Owner Channel</button>
-                <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #add8e6; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Hamster_Dimond/1544?single'">Sponsor Channel</button>
+                
+                
             </div>
         </div>
         
@@ -646,10 +669,10 @@
                 keyText.style.width = 'calc(66% - 22px)'; // Adjust for copy button width
 
                 const copyButton = document.createElement('div');
-                copyButton.textContent = 'Copy Code';
+                copyButton.innerHTML = 'Copy Code';
                 copyButton.style.display = 'inline-flex';
                 copyButton.style.padding = '10px 10px';
-                copyButton.style.backgroundColor = '#09A629';
+                copyButton.style.backgroundColor = '#007bff';
                 copyButton.style.color = '#fff';
                 copyButton.style.border = 'none';
                 copyButton.style.borderRadius = '5px';
@@ -659,16 +682,16 @@
                 copyButton.addEventListener('click', () => {
                     navigator.clipboard.writeText(key)
                         .then(() => {
-                            copyButton.textContent = 'Copied !';
+                            copyButton.textContent = 'Copied!';
                             copyButton.style.backgroundColor = "#128028";
                             setTimeout(() => {
-                                copyButton.textContent = 'Copy Code';
+                                copyButton.innerHTML = 'Copy Code';
                                 copyButton.style.backgroundColor = "#09A629";
                             }, 1500); // Change back after 1 second
                         })
                         .catch(err => {
                             console.error("Failed to copy: ", err);
-                            copyButton.textContent = 'Failed!';
+                            copyButton.textContent = 'Failed to copy! Please try again.';
                         });
                 });
 
@@ -706,7 +729,7 @@
             clearInterval(intervalId2);
             loadingBarFill.style.width = '0%'; // Reset loading bar
             if (selectedApp === "All") {
-                appendToDisplay('Please wait, Generating All Games Codes');
+                appendToDisplay('Powered by @Hamster_Dimond TG channel');
                 appendToDisplay('Expected time 10 minutes')
                 const appNames = Object.keys(appConfigs); // Get app names from the config
                 let currentAppIndex = 0; // Start with the first app
@@ -733,7 +756,7 @@
             } else {
                 NUM_KEYS_TO_GENERATE = parseInt(document.getElementById('keyCount').value); // Get selected key count
                 console.log(NUM_KEYS_TO_GENERATE)
-                appendToDisplay(`Please wait, Generating ${selectedApp} Keys...`);
+                appendToDisplay(`Powered by @Hamster_Dimond TG channel ${selectedApp} Keys...`);
                 const genTime = appConfigs[selectedApp].gentime
                 appendToDisplay(`Expected time ${genTime} minutes`)
                 await findValidKeys(appConfigs[selectedApp].appToken, appConfigs[selectedApp].promoId, NUM_KEYS_TO_GENERATE, selectedApp);
@@ -774,7 +797,7 @@
              }, 2000); 
             })
             .catch(err => {
-              copyButton.textContent = 'Failed!';
+              copyButton.textContent = 'Failed to copy! Please try again.';
               copyButton.style.backgroundColor = "red";
              setTimeout(() => {
                 copyButton.textContent = 'Copy All Codes';
@@ -852,6 +875,27 @@
         }
         document.addEventListener('DOMContentLoaded', displayStoredKeys)
     </script>
-    <div class="version">v1.4.0</div>
+    <div class="version">v0.0.1</div>
+
+<button id="themeToggleButton" style="position: fixed; bottom: 20px; right: 20px; padding: 10px; font-size: 14px; border-radius: 5px; cursor: pointer;">Theme🌞</button>
+<script>
+    const themeToggleButton = document.getElementById('themeToggleButton');
+    themeToggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.add('light-mode');
+    }
+</script>
+
 </body>
 </html>
