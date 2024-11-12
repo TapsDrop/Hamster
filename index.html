@@ -1,65 +1,28 @@
-
-<style>
-    body.light-mode {
-        background-color: #f0f0f0; /* رنگ مشابه تم ChatGPT */
-        color: #000; /* متن مشکی */
-    }
-    body.dark-mode {
-        background-color: #FFFFFF; /* تم شب */
-        color: #000000; /* متن سفید */
-    }
-    input, textarea, select {
-        background-color: #FFFFFF;
-        color: #000;
-    }
-    body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
-        background-color: #000000;
-        color: #000000;
-    }
-    .form-container h2 {
-        color: inherit;
-    }
-
-.container { display: block; width: 100%; }
-    .form-container:first-child {
-        border: 2px solid black; /* Add black border only around the first box */
-    }
-    .container {
-        margin-left: 0; /* Align container to the left to fit mobile screens */
-    }
-    
-    .form-container:last-child {
-        margin: 0 auto; /* Center align the second box */
-        width: 85%; /* Set width to ensure centering */
-    }
-    </style>
-    
-    
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hamster Code Generator</title>
+<title>Hamster Dimond generator</title>
 <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
+            background-color: #2E2E2E;
             padding: 20px;
         }
         .container {
             display: flex;
             justify-content: space-between;
             max-width: 1000px;
-            margin-left: 5%; margin-right: 5%;
+            margin: 0 auto;
         }
-        .form-container { background-color: #FFFFFF; color: #000000;
-            border: none;
+        .form-container {
+            border: 2px solid #333;
             border-radius: 10px;
 
             width: 48%;
-            background-color: #FFFFFF; color: #000000;
+            background-color: #000; color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -104,7 +67,7 @@
             width: calc(100% - 22px);
             padding: 10px;
             background-color: #007bff;
-            color: #000000;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -115,7 +78,7 @@
             width: calc(50% - 20px);
             padding: 13px 13px;
             background-color: #007bff;
-            color: #000000;
+            color: #fff;
             box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
             font-size:18px;
             font-weight: 500;
@@ -147,10 +110,9 @@
         }
         #jsonDataDisplay {
             white-space: pre;
-            background-color: #FFFFFF; /* Set background to black */
-            color: #000000; /* Set text color to white */
+            background-color: #f9f9f9;
             padding: 10px;
-            border: 1px solid #333;
+            border: 1px solid #ccc;
             border-radius: 5px;
             margin-top: 10px;
             font-family: monospace;
@@ -178,15 +140,15 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .form-container { background-color: #FFFFFF; color: #000000;
-            border: none;
+            .form-container {
+            border: 2px solid #333;
             border-radius: 10px;
 
-                width: 90%;
+                width: 95%;
                 margin-bottom: 20px;
             }
             #jsonDataDisplay {
-                width: 90%;
+                width: 95%;
                 margin: 10 auto;
             }
         }
@@ -205,7 +167,7 @@
         #jsonDataDisplay > div > div {
             padding: 5px 10px;
             background-color: #007bff;
-            color: #000000;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -219,7 +181,7 @@
         /* Loading bar styling */
         #loadingBar {
             display: none;
-            width: 90%; 
+            width: 101%; 
             height: 20px;
             background-color: #ddd; /* Light gray background */
             border-radius: 5px;
@@ -243,7 +205,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #000000;
+            color: #333;
             font-weight: bold;
         }
         .version {
@@ -251,7 +213,7 @@
             bottom: 3px;
             left: 6px;
             font-size: 12px;
-            color: #000000;
+            color: #666;
             z-index: 1;
         }
         .ad-container {
@@ -265,7 +227,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
             text-decoration: none;
-            color: #000000;
+            color: #333;
           }
 
         .ad-image {
@@ -291,7 +253,7 @@
         .ad-tag {
             margin: 0;
             font-size: 14px;
-            color: #000000;
+            color: #666;
           }
           .nav-images {
               margin-top:0px;
@@ -300,8 +262,9 @@
           }
     
 .generated-container {
-    background-color: #FFFFFF;  /* Dark background for generated codes section */
-    color: #000000;              /* White text for visibility */
+    min-height: 150px;
+    background-color: #1a1a1a;  /* Dark background for generated codes section */
+    color: #ffffff;              /* White text for visibility */
     display: flex;
     flex-wrap: wrap;
     gap: 10px;                   /* Space between each code block */
@@ -310,9 +273,8 @@
 }
 
 .generated-container .code-block {
-    background-color: #FFFFFF; /* Set background to black for container behind Copy Code */
-    background-color: #000000333;   /* Slightly lighter than container for contrast */
-    color: #000000;
+    background-color: #333333;   /* Slightly lighter than container for contrast */
+    color: #ffffff;
     padding: 10px 20px;          /* Padding inside each code block */
     border-radius: 5px;          /* Rounded edges for each code block */
     display: flex;
@@ -327,38 +289,22 @@
 }
 
 
-    .form-container:first-child {
-        border: 2px solid black; /* Add black border only around the first box */
-    }
-    .container {
-        margin-left: 0; /* Align container to the left to fit mobile screens */
-    }
-    
-    .form-container:last-child {
-        margin: 0 auto; /* Center align the second box */
-        width: 85%; /* Set width to ensure centering */
+.form-container {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+    .form-container:first-of-type {
+        border: 2px solid black !important;
     }
     </style>
-    
-    
-
-<style>
-    .copy-button {
-        background: url('/mnt/data/file-EXtIUpAT51AFMn6cvCbt5bM3') no-repeat center center;
-        background-size: contain;
-        width: 30px;
-        height: 30px;
-        border: none;
-        cursor: pointer;
-    }
-</style>
 </head>
 <body>
 <div class="container">
-<div class="form-container" style="background-color: #FFFFFF000; color: #FFFFFF; padding: 20px; width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-<h2 style="color: #000000;">Hamster Dimond Generator</h2>
+<div class="form-container">
+<h2>Hamster Dimond  generator</h2>
 <br/>
-<label for="appSelect" style="color: #000000;">Select application:</label>
+<label for="appSelect" style="width: calc(100% - 22px); display: inline-block;">Select application:</label>
 <select id="appSelect" onchange="updateConstants()">
 <option selected="" value="Cube">Chain Cube 2048</option>
 <option value="Train">Train Miner</option>
@@ -376,7 +322,7 @@
 <option value="Tower">Tower Defence</option>
 <option value="All">All Games Codes</option>
 </select>
-<label for="keyCount" id="keyCountLabel" style="color: #000000;">Number of codes:</label>
+<label for="keyCount" id="keyCountLabel" style="width: calc(100% - 22px); display: inline-block;">Number of codes:</label>
 <select id="keyCount">
 <option value="1">1</option>
 <option value="2">2</option>
@@ -389,28 +335,31 @@
 <option value="9">9</option>
 <option value="10">10</option>
 </select>
-<button onclick="generateKeys()">Generate Codes</button>
-
-<div class="form-container">
-    <h2>Hamster Dimond</h2>
-    <pre class="key-display" id="jsonDataDisplay"></pre>
-    <div id="loadingBar">
-        <div id="loadingBarFill"></div>
-        <div id="loadingBarNumber"></div>
-    </div>
-    <br/>
-    <div id="keyContainer">
-        <h2 class="gentext">Generated Codes</h2>
-    </div>
-    <div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
-        <button class="buttoon" id="deleteButton" onclick="deleteKeys()">Delete Codes</button>
-    </div>
-    
-    <br/>
-    <div style="display: flex; justify-content: center; margin-top: 0px;">
-    </div>
+<button onclick="generateKeys()" style="width: calc(100% - 22px);">Generate Codes</button>
+<div class="form-container" style="border: none; width: 90%; margin: 0 auto;">
+<h2>@Hamster_Dimond TG Channel</h2>
+<pre class="key-display" id="jsonDataDisplay"></pre>
+<div id="loadingBar">
+<div id="loadingBarFill"></div>
+<div id="loadingBarNumber"></div>
 </div>
-
+<br/>
+<div id="keyContainer">
+<h2 class="gentext">Generated Codes</h2>
+<!-- Generated keys will be placed here -->
+</div>
+<div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
+<button class="buttoon" id="deleteButton" onclick="deleteKeys()">Delete Codes</button>
+</div>
+<div id="important" style="text-align: center; display: none; margin-top: 10px;">
+<a href="https://t.me/Hamster_Dimond/1530" style="color: #FF0000; font-weight:500; text-decoration: none;">
+<span style="border-bottom: 1px dotted #FF0000;">How to enter codes !</span>
+</a>
+</div>
+<br/>
+<div style="display: flex; justify-content: center; margin-top: 0px;">
+</div>
+</div></div>
 </div>
 <script>
         const appConfigs = {
@@ -633,7 +582,7 @@
 
             const key = await generateKey(clientToken, promoId);
             if (key) {
-                appendToDisplay(`New Code : ${key}`);
+                appendToDisplay(`Powered by @Hamster_Dimond TG Channel\nNew Code : ${key}`);
                 allKeys.push(key); // Add the key to the array
                 localStorage.setItem('generatedKeys', JSON.stringify(allKeys));
             } else {
@@ -701,7 +650,7 @@
                 keyText.style.width = 'calc(66% - 22px)'; // Adjust for copy button width
 
                 const copyButton = document.createElement('div');
-                copyButton.innerHTML = '📋';
+                copyButton.textContent = '✞☬ƈơ℘ყ☬✞';
                 copyButton.style.display = 'inline-flex';
                 copyButton.style.padding = '10px 10px';
                 copyButton.style.backgroundColor = '#007bff';
@@ -714,16 +663,16 @@
                 copyButton.addEventListener('click', () => {
                     navigator.clipboard.writeText(key)
                         .then(() => {
-                            copyButton.textContent = 'Copied!';
-                            copyButton.style.backgroundColor = "#128028";
+                            copyButton.textContent = 'Copied !';
+                            copyButton.style.backgroundColor = "#0056b3";
                             setTimeout(() => {
-                                copyButton.innerHTML = '📋';
-                                copyButton.style.backgroundColor = "#09A629";
+                                copyButton.textContent = '✞☬ƈơ℘ყ☬✞';
+                                copyButton.style.backgroundColor = "#007bff";
                             }, 1500); // Change back after 1 second
                         })
                         .catch(err => {
                             console.error("Failed to copy: ", err);
-                            copyButton.textContent = 'Failed to copy! Please try again.';
+                            copyButton.textContent = 'Failed!';
                         });
                 });
 
@@ -761,7 +710,7 @@
             clearInterval(intervalId2);
             loadingBarFill.style.width = '0%'; // Reset loading bar
             if (selectedApp === "All") {
-                appendToDisplay('Powered by @Hamster_Dimond TG channel');
+                appendToDisplay('Please wait, Generating All Games Codes');
                 appendToDisplay('Expected time 10 minutes')
                 const appNames = Object.keys(appConfigs); // Get app names from the config
                 let currentAppIndex = 0; // Start with the first app
@@ -788,7 +737,7 @@
             } else {
                 NUM_KEYS_TO_GENERATE = parseInt(document.getElementById('keyCount').value); // Get selected key count
                 console.log(NUM_KEYS_TO_GENERATE)
-                appendToDisplay(`Powered by @Hamster_Dimond TG channel ${selectedApp} Keys...`);
+                appendToDisplay(`Please wait, Generating ${selectedApp} Keys...`);
                 const genTime = appConfigs[selectedApp].gentime
                 appendToDisplay(`Expected time ${genTime} minutes`)
                 await findValidKeys(appConfigs[selectedApp].appToken, appConfigs[selectedApp].promoId, NUM_KEYS_TO_GENERATE, selectedApp);
@@ -822,18 +771,18 @@
           navigator.clipboard.writeText(keysToCopy) 
             .then(() => {
                 copyButton.textContent = 'Copied!';
-                copyButton.style.backgroundColor = "#128028";
+                copyButton.style.backgroundColor = "#0056b3";
              setTimeout(() => {
                 copyButton.textContent = 'Copy All Codes';
-                copyButton.style.backgroundColor = "#09A629";
+                copyButton.style.backgroundColor = "#007bff";
              }, 2000); 
             })
             .catch(err => {
-              copyButton.textContent = 'Failed to copy! Please try again.';
+              copyButton.textContent = 'Failed!';
               copyButton.style.backgroundColor = "red";
              setTimeout(() => {
                 copyButton.textContent = 'Copy All Codes';
-                copyButton.style.backgroundColor = "#09A629";
+                copyButton.style.backgroundColor = "#007bff";
              }, 2000); 
             });
         }
@@ -907,24 +856,6 @@
         }
         document.addEventListener('DOMContentLoaded', displayStoredKeys)
     </script>
-<div class="version">v0.0.1</div>
-<script>
-    const themeToggleButton = document.getElementById('themeToggleButton');
-    themeToggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        document.body.classList.toggle('light-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-    });
-
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.add('light-mode');
-    }
-</script>
+<div class="version">v1.4.0</div>
 </body>
 </html>
