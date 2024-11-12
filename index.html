@@ -582,7 +582,7 @@
 
             const key = await generateKey(clientToken, promoId);
             if (key) {
-                appendToDisplay(`Powered by @Hamster_Dimond TG Channel\nNew Code : ${key}`);
+                appendToDisplay(`New Code : ${key}`);
                 allKeys.push(key); // Add the key to the array
                 localStorage.setItem('generatedKeys', JSON.stringify(allKeys));
             } else {
